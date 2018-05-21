@@ -22,7 +22,7 @@ type MySQLConfig struct {
 //       db, err := gorm.Open("mysql", "user:password@/dbname?charset=utf8&parseTime=True&loc=Local")
 // String 获取数据库配置参数
 func (m *MySQLConfig) String() string {
-	return fmt.Sprintf("%s:%s@/%s?%s", m.UserName, m.Password, m.Database, m.Parameters)
+	return fmt.Sprintf("%s:%s@%s/%s?%s", m.UserName, m.Password, m.Host, m.Database, m.Parameters)
 }
 
 // New 打开数据库
