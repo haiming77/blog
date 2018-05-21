@@ -1,15 +1,14 @@
 package blog
 
 import (
-	"github.com/jinzhu/gorm"
 	"time"
+
+	"github.com/jinzhu/gorm"
 )
 
-type BlogInt int
-
 const (
-	Technology BlogInt = 1001 + iota
-	Article BlogInt
+	Technology = 1001 + iota
+	Article
 )
 
 type Blog struct {
@@ -18,11 +17,11 @@ type Blog struct {
 	UpdatedAt time.Time `json:"updated_at"`
 	DeletedAt time.Time `json:"deleted_at"`
 
-	Type int `json:"type"`
-	Labels []string `json:"labels"`
-	Title string `json:"title"`
-	Content string `json:"content" sql:"type:text"`
-	
+	Type    int      `json:"type"`
+	Labels  []string `json:"labels"`
+	Title   string   `json:"title"`
+	Content string   `json:"content" sql:"type:text"`
+
 	UserID uint64 `json:"user_id"`
 }
 
@@ -32,8 +31,8 @@ func (b Blog) TableName() string {
 
 func (b *Blog) AddIndexs(db *gorm.DB) error {
 	var err error
-	
-	err = db.Model(b).AddIndex("idx_blogs_deleted_at","deleted_at")
+
+	err = db.Model(b).AddIndex("idx_blogs_deleted_at", "deleted_at").Error
 	if err != nil {
 		return err
 	}
