@@ -1,0 +1,15 @@
+{
+    "env":"debug",
+    "host":"",
+    "port":"7777",
+    "DB":{
+        "username":   "root",
+		"password":   "root",
+		"database":   "blog",
+		"host":       "tcp(localhost:3306)",
+		"parameters": "charset=utf8mb4&parseTime=True",
+		"maxidle":    10,
+		"maxopen":    10,
+		"debug":      true
+    }
+}
