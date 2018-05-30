@@ -18,6 +18,7 @@ func init() {
 	}
 }
 
+// InitCpannelConfig 初始化cpannel配置
 func InitCpannelConfig() error {
 	viper.SetConfigName("config")
 	viper.AddConfigPath(".")
@@ -45,6 +46,7 @@ func InitCpannelConfig() error {
 	return nil
 }
 
+// InitMySQL 初始化数据库
 func InitMySQL() error {
 	DB, err = appControl.DB.New()
 	if err != nil {

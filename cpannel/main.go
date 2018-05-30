@@ -6,7 +6,8 @@ import (
 )
 
 var (
-	err        error
+	err error
+	// DB 数据库
 	DB         *gorm.DB
 	appControl *configs.ApplicationConfig
 )
