@@ -4,10 +4,11 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type UserControllers struct {
+type UserController struct {
 	ApplicationController
 }
 
-func (uc UserControllers) Signup(c *gin.Context) {
+func (uc UserController) Signup(c *gin.Context) {
 
+	c.JSON(1, "")
 }
